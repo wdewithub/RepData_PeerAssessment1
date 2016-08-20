@@ -32,7 +32,7 @@ detach("package:plyr",unload=TRUE)
 detach("package:dplyr",unload=TRUE)
 ```
 
-```{r}
+```{r daily_tot_steps}
 hist(steps_by_day$tot_steps, breaks=10, xlab="daily total of steps", main="")
 ```
 
@@ -96,7 +96,7 @@ There are 2304 missing observations.
  }
 ```
 
-```{r}
+```{r tot_steps_with_imputation}
 detach("package:plyr",unload=TRUE)
 steps_by_day <- input_merge %>% group_by(date) %>% summarize(tot_steps=sum(steps))
 hist(steps_by_day$tot_steps, breaks=10, xlab="daily total of steps", main="")
@@ -133,7 +133,7 @@ for (i in 1:nrow(input)) {
 input_merge$dagtype <- as.factor(input_merge$dagtype)
 ```
 
-###Creating a panel plot compring the average daily steps by weekdays vs weekend days
+###Creating a panel plot comparing the average daily steps by weekdays vs weekend days
 
 ```{r panelplot, fig.height=4}
 meansteps <- input_merge %>% group_by(dagtype,interval) %>% summarize(meansteps=mean(steps)) 

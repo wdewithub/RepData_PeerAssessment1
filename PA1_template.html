@@ -215,8 +215,8 @@ for (i in 1:nrow(input)) {
 }
 input_merge$dagtype &lt;- as.factor(input_merge$dagtype)</code></pre>
 </div>
-<div id="creating-a-panel-plot-compring-the-average-daily-steps-by-weekdays-vs-weekend-days" class="section level3">
-<h3>Creating a panel plot compring the average daily steps by weekdays vs weekend days</h3>
+<div id="creating-a-panel-plot-comparing-the-average-daily-steps-by-weekdays-vs-weekend-days" class="section level3">
+<h3>Creating a panel plot comparing the average daily steps by weekdays vs weekend days</h3>
 <pre class="r"><code>meansteps &lt;- input_merge %&gt;% group_by(dagtype,interval) %&gt;% summarize(meansteps=mean(steps)) 
 library(lattice)
 xyplot(meansteps ~interval|dagtype,meansteps,type=&quot;l&quot;, layout=c(1,2), xlab=&quot;Interval&quot;, ylab=&quot;Number of steps&quot;)</code></pre>

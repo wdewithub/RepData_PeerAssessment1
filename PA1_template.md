@@ -34,7 +34,7 @@ steps_by_day <- input %>% group_by(date) %>% summarize(tot_steps=sum(steps))
 hist(steps_by_day$tot_steps, breaks=10, xlab="daily total of steps", main="")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](PA1_template_files/figure-html/daily_tot_steps-1.png)<!-- -->
 
 On most days the total number of steps lies between 10 and 12K.
 
@@ -160,7 +160,7 @@ steps_by_day <- input_merge %>% group_by(date) %>% summarize(tot_steps=sum(steps
 hist(steps_by_day$tot_steps, breaks=10, xlab="daily total of steps", main="")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/tot_steps_with_imputation-1.png)<!-- -->
 
 In imputing the missing values with the median for that interval, we see there are far more days with a near-zero number of daily steps
 
@@ -198,7 +198,7 @@ for (i in 1:nrow(input)) {
 input_merge$dagtype <- as.factor(input_merge$dagtype)
 ```
 
-###Creating a panel plot compring the average daily steps by weekdays vs weekend days
+###Creating a panel plot comparing the average daily steps by weekdays vs weekend days
 
 
 ```r
